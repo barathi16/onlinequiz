@@ -1,0 +1,196 @@
+﻿@*@model IEnumerable<classlibrary.Java>*@
+@model classlibrary.Displayquestion
+@* <div id="container">
+<div class="row">
+   <div style="text-align:left">
+        <form asp-action="Index" asp-controller="Home" method="post"  AllowPaging="True" pagesize="10">*@
+            
+       @* @foreach(var item in Model)
+        { 
+            <label>courseid   :</label>@item.Courseid<br />
+
+            <label>level    :</label>           @item.Qid<br />
+                 <label>Question id   :</label>      @item.Qid<br />
+                  
+                    <label>Question   :</label>   @item.Question<br />
+                    
+                       
+                  
+                    <input type="radio" value=0  name="quiz" onclick="myfunction()">@item.Option1<br>
+                     <input type="radio"value=1 name="quiz"onclick="myfunction()" >@item.Option2<br>
+                      <input type="radio" value=2 name="quiz"onclick="myfunction()" >@item.Option3<br>
+                    <input type="radio"value=3 name="quiz"onclick="myfunction()">@item.Option4<br>
+
+        }*@
+        
+      @*  var item={
+
+             Courseid: 'courseid1',
+    Qid: 'qid1',
+    Question: 'question1',
+    Option1: 'option1',
+    Option2: 'option2',
+    Option3: 'option3',
+    Option4: 'option4'
+        }
+*@
+
+       @*@foreach(var item in Model)
+        {
+        <div class="row align-items-start">
+    <div class="col-9">
+      
+              <label asp-for= "Question"></label> @item.Question<br />
+         
+     <p> @item.Question</p>
+
+      </div>
+        <div>
+          <input class="form-check-input" type="radio" name="option1" id="option1">
+          <label class="form-check-label" for="flexRadioDefault1">
+          @item.Option1
+          </label>
+        </div>
+        <div>
+          <input class="form-check-input" type="radio" name="option1" id="option2">
+          <label class="form-check-label" for="flexRadioDefault1">
+         @item.Option2
+          </label>
+        </div>
+        <div>
+          <input class="form-check-input" type="radio" name="option1" id="option3">
+          <label class="form-check-label" for="flexRadioDefault1">
+         @item.Option3
+          </label>
+        </div>
+        <div>
+          <input class="form-check-input" type="radio" name="option1" id="option4">
+          <label class="form-check-label" for="flexRadioDefault1">
+           @item.Option4
+          </label>
+        </div>
+     </div>
+ 
+  
+  }
+ <div style="clear: both;">
+        @*<button type="button" class="btn btn-primary"  style="float: left;">Previous</button>
+        <button type="button" class="btn btn-primary" style="float: right"onclick="Java()">Next</button>
+      </div>
+      <div class="col-3 text-center">
+      Timer
+    </div>
+  </form>
+  </div>
+</div>
+</div>*@
+@*
+    
+   <div style="text-align:left">
+       <button id="next-question-button">Next Question</button>
+        <button><a asp-action="ENDTEST"    class="btn btn-info font-weight-bold " >END TEST</a></button>
+</div>
+          *@
+       @*   <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <div><b>Questions</b><br /></div>
+    <table class="table table-bordered table-responsive table-hover">
+        @{
+            var tempQuestions = ViewData["QuestionsData"] as questions;
+        }
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>
+                @tempQuestions.Qid
+            </td>
+            <td>
+                @tempQuestions.Question
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+              @*  <input type="button" id="nextButton" width="700" value="NEXT" onclick="location.href = '@Url.Action("Next", "Home")'" />
+                <input type="button" id="randomButton" width="700" value="Next" onclick="location.href = '@Url.Action("Random", "Home")'" />
+                <input type="button" id="displayAllButton" width="700" value="DISPLAY ALL" onclick="location.href = '@Url.Action("DisplayAll", "Home")'" />
+            </td>
+        </tr>
+    </table>
+</div>
+*@
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+   
+<div>
+    <div><b>Questions</b><br /></div>
+    <table class="table table-bordered table-responsive table-hover">
+        @{
+            var tempQuestions = ViewData["QuestionsData"] as classlibrary.Displayquestion;
+        }
+             @tempQuestions.Question 
+     @*   <tr>
+           <th>No</th>
+            <th>Name</th>
+            <td>
+               
+            </td>
+        </tr>*@
+        
+             
+           @* <td>
+
+                @tempQuestions.Qid
+            </td>*@
+            
+            <div>
+          <input class="form-check-input" type="radio" name="quiz">
+          <label class="form-check-label" for="flexRadioDefault1">
+         @tempQuestions.Option1
+          </label>
+        </div>
+              <div>
+          <input class="form-check-input" type="radio" name="quiz">
+          <label class="form-check-label" for="flexRadioDefault1">
+         @tempQuestions.Option2
+          </label>
+        </div>
+              <div>
+          <input class="form-check-input" type="radio" name="quiz" >
+          <label class="form-check-label" for="flexRadioDefault1">
+         @tempQuestions.Option3
+          </label>
+        </div>
+              <div>
+          <input class="form-check-input" type="radio" name="quiz" >
+          <label class="form-check-label" for="flexRadioDefault1">
+         @tempQuestions.Option4
+          </label>
+        </div>
+       
+        
+    </table>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+@*              <input type="button" id="nextButton" width="700" value="NEXT" onclick="location.href = '@Url.Action("Next", "quiz")'" />
+*@                <input type="button" id="randomButton" width="700" value="Next" onclick="location.href = '@Url.Action("Random", "quiz")'" />
+ <button><a asp-action="ENDTEST"    class="btn btn-info font-weight-bold " >END TEST</a></button>
+              @*  <input type="button" id="displayAllButton" width="700" value="DISPLAY ALL" onclick="location.href = '@Url.Action("DisplayAll", "quiz")'" />*@
+            </td>
+        </tr>
+    </table>
+</div>

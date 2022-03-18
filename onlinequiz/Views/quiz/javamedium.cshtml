@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*@model IEnumerable<classlibrary.java>
+<div class="row">
+   <div style="text-align:left">
+
+    
+        @foreach(var item in Model)
+        {  <label>courseid   :</label>@item.Courseid<br />
+
+            <label>level    :</label>           @item.Qid<br />
+                 <label>Question id   :</label>      @item.Qid<br />
+                    <label>Question   :</label>   @item.Question<br />
+                     <label>A   :</label>  @item.Option1<br />
+                     <label>B   :</label>  @item.Option2<br />
+                     <label>C :</label>  @item.Option3<br />
+                    <label>D    :</label>   @item.Option4<br />
+        }
+            
+    </div>
+    <br />
+
+    <br />
+    <br />
+    
+    <div class="row">
+   <div style="text-align:left">
+        <button><a asp-action="ENDTEST"    class="btn btn-info font-weight-bold " >END TEST</a></button>
+</div>
+</div>*@

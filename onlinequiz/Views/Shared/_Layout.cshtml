@@ -1,0 +1,119 @@
+﻿<html>    
+    <header>
+        <title>
+           Online Competency Test:)
+        </title>
+          <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/fontaw/css/all.css" />
+    
+    </header>
+  
+   
+   
+
+    <body>
+         
+        <header>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+         @*   <img src="~/images/logos.jpg"  style="width:90%; height:50%" />*@
+        </header>
+        <nav>
+            <br/>
+           @*<div class="menu-bar">
+             <a class="active" asp-action="Home"> Home<i class="fa-solid fa-house"></i></a>
+            @if (Context.Session.GetString("uid") == null)
+             {
+            <a asp-action="Login"> Login<i class="fa-solid fa-user-helmet-safety"></i></a>
+        }
+        else
+        {
+            <a asp-action="Logout">Logout<i class="fa-solid fa-user-helmet-safety"></i></a>
+        }*@
+       @* <a  asp-action="Login"> Login<i class="fa-solid fa-user-helmet-safety"></i></a>*@
+            
+         
+        
+      @*  <a asp-action="Register"> Register<i class="fa-solid fa-registered"></i></a>
+        <div class="dropdown">
+     <li> <a asp-action="course"> course<i class="fa-brands fa-discourse"></i></a>
+      
+
+            <div class="dropdown-content">
+                 <a asp-action="tech"> tech<i class="fa fa-angle-right"></i> </a>
+                 <div class="dropdown-content">
+                <a asp-action="java"> java</a>
+                <a asp-action="dotnet"> dotnet </a>
+                <a asp-action="apti"> apti </a>
+           
+            </div>
+              <div class="dropdown-content">
+                 <a asp-action="tech"> tech<i class="fa fa-angle-right"></i> </a>
+                 <div class="dropdown-content">
+                <a asp-action="apti"> apti</a>
+                <a asp-action="verbal"> verbal </a>
+              </div>
+              </div>
+           
+            </div>
+
+           </div>
+          </li>
+                 <a asp-action="Aboutus"> Aboutus<i class="fa-solid fa-user-helmet-safety"></i></a>
+                  <a asp-action="Contact"> Contactus<i class="fa-solid fa-user-helmet-safety"></i></a>
+                   <a asp-action="Feedback"> Feedback<i class="fa-solid fa-user-helmet-safety"></i></a>
+                   </div>*@
+                     <nav class="navbar navbar-expand-lg navbar-light "   > 
+  
+  <button class="navbar-toggler" type="button"        data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+         <li class="nav-item active">
+        <h2> <a   class="nav-link"  asp-action="Home"> Home<i class="nav-link "></i></a></h2>
+      </li>
+        @if (Context.Session.GetString("userid") == null)
+                    {
+                        <li class="nav-item active">
+                            <h2> <a   class="nav-link"  asp-action="Login"> Login<i class="nav-link "></i></a></h2>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item active">
+                            <h2> <a   class="nav-link"  asp-action="Logout">Logout<i class="nav-link "></i></a></h2>
+      </li>
+                    }
+      <li class="nav-item">
+       <h2> <a class="nav-link"   asp-action="Register"> Register<i class="nav-link "></i></a></h2>
+      </li>
+      
+      <li class="nav-item">
+      <h2> <a   class="nav-link"    asp-action="course"> course<i class="nav-link "></i></a></h2>
+      </li>
+      <li class="nav-item">
+      <h2> <a   class="nav-link"    asp-action="Admin"> ADMIN<i class="nav-link "></i></a></h2>
+      </li>
+       
+      <li class="nav-item">
+      <h2> <a   class="nav-link"    asp-action="Feedback"> feedback<i class="nav-link "></i></a></h2>
+      </li>
+    </ul>
+
+    <div class="topnav-right">
+    <h1>
+      <a class="navbar-brand"  style="margin-right:50px"> <b> Online Quiz</b> </a>
+      </h1>
+      </div>
+  </div>
+</nav>
+        </nav>
+        <article>
+            @RenderBody()
+            </article>
+        <footer>
+
+</footer>
+</body>
+</html>

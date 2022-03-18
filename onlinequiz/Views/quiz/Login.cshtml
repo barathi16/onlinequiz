@@ -1,0 +1,236 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*<h1>welcome to Login page</h1>
+<hr />
+<div style="width:500px; margin-left:300px">
+<form method="post">
+    <div style="color:blue;font-size:xx-large"> <i class="fa-solid fa-user"></i></div>
+    <input  type="text"name="uname" class="form-control" /> <br />
+    <div style="color:blue;font-size:xx-large"> <i class="fa-solid fa-key"></i></div>
+    <input type="password" name="pwd"  class="form-control" /><br />
+    <button type="submit">
+        <i class="fa-solid fa-user"></i>
+    </button>
+    </form>
+    </div>
+     <div style="background-color:steelblue;color:white;border:3px solid blue">
+    @ViewData["a"]
+</div>*@
+ @ViewData["a"]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+    <style>
+        html, body {
+            background-image: url('data:image/png;base64,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');;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Numans', sans-serif;
+        }
+
+        .container {
+            height: 100%;
+            align-content: center;
+        }
+
+        .card {
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 350px;
+            height: 400px;
+            background-color: rgba(255,255,255,0.5) !important;
+        }
+
+        j {
+            user-select: none;
+        }
+
+        .card-header {
+            color: white;
+        }
+
+
+        .input-group-prepend span {
+              width: 50px;
+            height: 40px;
+            border-radius: 50px;
+            background: linear-gradient(to right, orange, red);
+            color: black;
+            border: 0 !important;
+        }
+
+        input:focus {
+            outline: 0 0 0 0 !important;
+            box-shadow: 0 0 0 0 !important;
+        }
+
+        .remember {
+            color: white;
+        }
+
+            .remember input {
+                width: 20px;
+                height: 20px;
+                margin-left: 15px;
+                margin-right: 5px;
+            }
+
+        .login_btn {
+            color: black;
+            background-color: #FFC312;
+            width: 100px;
+        }
+
+            .login_btn:hover {
+                color: black;
+            }
+
+        .links {
+            color: white;
+        }
+
+        .submit-btn {
+            width: 50%;
+            height: 33px;
+            font-size: 20px;
+            color: white;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            right:0%;
+            background: linear-gradient(to right, orange, red);
+            border: 0;
+            outline: none;
+            border-radius: 50px;
+            
+        }
+
+        .links a {
+            margin-left: 4px;
+        }
+
+        .rounded-circle {
+            width: 100px;
+            height: 100px;
+            left: 70px;
+            border-radius: 50px;
+        }
+
+        .card-header {
+            float: left;
+            top: 1%;
+            font-size: 30px;
+            left: 30%;
+            position: relative;
+        }
+
+        .s {
+            float: left;
+            top: 1%;
+            font-size: 30px;
+            left: 25%;
+            color: white;
+            position: relative;
+        }
+
+        .form-group {
+            height: 20px;
+            width: 300px;
+        }
+
+        .form-control {
+            border-radius: 50px;
+            height: 40px;
+            width:150px;
+            font-size: 20px;
+        }
+
+        i {
+            height: 30px;
+            width: 30px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <a href="/Quizcontroller1/Register/" style="font-size:20px;"> <i class="fa fa-backward" aria-hidden="true" style="font-size:20px;"></i> Back</a>
+
+
+
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+
+                    <img class="rounded-circle" src=~/images/java.png />
+                </div>
+                <div class="s">
+                    <h3>Admin Login</h3>
+                </div>
+
+                <div class="card-body">
+<form method="post">
+    <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user" aria-hidden="true"></i></span>
+                            </div>
+                            <td><input  type="text"name="uname" class="form-control" /> <br /> <br /> <br /> <br /></td>
+
+                        </div>
+                        <br />
+                        
+         
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <td>   <input type="password" name="pwd"  class="form-control" /><br /></td>
+                        </div>
+                    
+                        <div class="container">
+                            <br>
+                            <br />
+                            <button type="submit" class="submit-btn"> Login</button>
+                        </div>
+                    </form>
+                    </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+
+    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+@* <div style="background-color:steelblue;color:white;border:3px solid blue">
+  
+</div>*@
+</body>
+</html>
+       

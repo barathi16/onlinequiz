@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div
+    class="container">
+    <div class="button">
+        <span class="fa fa-bars" ><h1>ADMIN</h1></span>
+        </div>
+        <ul>
+            <li>< <a asp-action="ADDCategory"  
+       class="btn btn-info font-weight-bold " >ADDCategory</a>
+            </li>
+            <li>< <a asp-action="ADDTEST"  
+                class="btn btn-info font-weight-bold " >ADDQuestion</a>
+            </li>
+        </ul>>
+        
+
+        
+
+    </div>
+    <script>
+       $(document).ready(function)()
+       {
+           $('.button').click(function()){
+               if($(this.hasclass))('expand')){
+                   $('ul').slideUp(function)(){
+                       $('.button').removeClass('expand');
+                        $('.fa').removeClass('expand');
+                   });
+               }else{
+                   $(this).addClass('expand');
+                   setTimeout(function)(){
+                       $('.fa').addClass('expand');
+                        $('ul').stop().slideDown();
+                   },200);
+                 });
+               });
+
+
+    </script>

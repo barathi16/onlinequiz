@@ -1,0 +1,175 @@
+﻿
+@model List<classlibrary.Java>
+@*@using paging_EF_core_MVC.Models;
+<div class="row">
+   <div style="text-align:left">*@
+
+    
+        @foreach(var item in Model)
+        {  <label>courseid   :</label>@item.Courseid<br />
+
+            <label>level    :</label>           @item.Qid<br />
+                 <label>Question id   :</label>      @item.Qid<br />
+                    <label>Question   :</label>   @item.Question<br />
+                     <label>A   :</label>  @item.Option1<br />
+                     <label>B   :</label>  @item.Option2<br />
+                     <label>C :</label>  @item.Option3<br />
+                    <label>D    :</label>   @item.Option4<br />
+        }
+ @*           
+    </div>
+    <br />
+
+    <br />
+    <br />
+    
+    <div class="row">
+   <div style="text-align:left">
+        <button><a asp-action="ENDTEST"    class="btn btn-info font-weight-bold " >END TEST</a></button>
+</div>
+</div>@*
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Index</title>
+</head>
+<body>
+    <h4>Customers</h4>
+    <hr/>
+    <form asp-action="Index" asp-controller="Home" method="post">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th>CustomerID</th>
+                <th>ContactName</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+            @foreach (var Javahard in Model)
+            {
+                <tr>
+                    <td>@Javahard.Qid</td>
+                    <td>@Javahard.Question</td>
+                    <td>@Javahard.Option1</td>
+                    <td>@Javahard.Option2</td>
+                    <td>@Javahard.Option3</td>
+                    <td>@Javahard.Option4</td>
+                </tr>
+            }
+        </table>
+        <br/>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                @for (int i = 1; i <= Model.pagecount; i++)
+                {
+                    <td>
+                        @if (i != Model.CurrentPageIndex)
+                        {
+                            <a href="javascript:PagerClick(@i);">@i</a>
+                        }
+                        else
+                        {
+                            <span>@i</span>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+        <input type="hidden" id="hfCurrentPageIndex" name="currentPageIndex"/>
+    </form>
+    <script type="text/javascript">
+            function PagerClick(index) {
+                document.getElementById("hfCurrentPageIndex").value = index;
+                document.forms[0].submit();
+            }
+    </script>
+    </body>
+</html>*@
+   @*<link rel="stylesheet" href="~/css/javahard.css" />
+        <link rel="stylesheet" href="~/js~/js/javahard.js" />
+<body >
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+
+      <div class="modal-content-container">
+
+                <h1>Congratulations, Quiz Completed.</h1>
+
+                <div class="grade-details">
+                    <p>Attempts : 10</p>
+                    <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                    <p>Right Answers : <span id="right-answers"></span></p>
+                    <p>Grade : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+
+            </div>*@
+        </div>
+@*<!-- end of modal of quiz details-->*@
+
+   @*     <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / 10</h1>
+                <h1> Question : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>*@
